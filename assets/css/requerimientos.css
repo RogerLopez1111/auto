@@ -1,0 +1,278 @@
+:root {
+    --navy-blue: #001a33;
+    --deep-blue: #003366;
+    --gold-accent: #FFD700;
+    --silver-accent: #C0C0C0;
+    --light-blue: #6699CC;
+    --white-smoke: #F5F5F5;
+    --table-bg: rgba(255, 255, 255, 0.9);
+    --text-dark: #333;
+    --text-light: #f8f8f8;
+}
+
+/* Estructura principal con fondo azul marino */
+.premium-requirements-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, var(--navy-blue), var(--deep-blue));
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    color: var(--text-light);
+    position: relative;
+    border: 1px solid var(--gold-accent);
+}
+
+/* Efecto de luz de neón */
+.premium-requirements-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--gold-accent), 
+        var(--silver-accent), 
+        var(--light-blue), 
+        var(--gold-accent));
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0.7;
+    animation: neonGlow 8s linear infinite;
+}
+
+@keyframes neonGlow {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Encabezado estilizado */
+.premium-header {
+    padding: 25px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.premium-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.premium-header h2 i {
+    color: var(--gold-accent);
+    margin-right: 15px;
+}
+
+.header-detail {
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+    margin-top: 15px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de la tabla */
+.premium-table-container {
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* Tabla premium */
+.premium-requirements-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background: var(--table-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.premium-requirements-table th {
+    background: linear-gradient(to right, var(--navy-blue), var(--deep-blue));
+    color: var(--gold-accent);
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    position: sticky;
+    top: 0;
+}
+
+.premium-requirements-table th i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--silver-accent);
+}
+
+.premium-requirements-table td {
+    padding: 15px 20px;
+    color: var(--text-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.premium-requirements-table td i {
+    color: var(--deep-blue);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Efectos hover elegantes */
+.premium-row:hover td {
+    background: rgba(102, 153, 204, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.premium-row:hover td:first-child {
+    border-left: 4px solid var(--gold-accent);
+}
+
+.premium-row:hover td i {
+    color: var(--gold-accent);
+    transform: scale(1.2);
+}
+
+.premium-requirements-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.premium-requirements-table tr:nth-child(odd) {
+    background: rgba(245, 245, 245, 0.98);
+}
+
+/* Pie de página */
+.premium-footer {
+    padding: 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-accent);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.brand-logo i {
+    font-size: 1.2rem;
+}
+
+/* Estilo cuando no hay requisitos */
+.premium-no-requirements {
+    max-width: 500px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, var(--navy-blue), var(--deep-blue));
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    color: var(--text-light);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gold-accent);
+}
+
+.empty-garage i {
+    font-size: 3.5rem;
+    color: var(--gold-accent);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-garage h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--gold-accent);
+}
+
+.empty-garage p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.garage-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+/* Efectos responsive */
+@media (max-width: 768px) {
+    .premium-requirements-container {
+        margin: 20px 10px;
+        border-radius: 8px;
+    }
+    
+    .premium-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .premium-requirements-table {
+        display: block;
+    }
+    
+    .premium-requirements-table thead {
+        display: none;
+    }
+    
+    .premium-row {
+        display: block;
+        margin-bottom: 15px;
+        background: var(--table-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .premium-requirements-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .premium-requirements-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--deep-blue);
+        margin-right: auto;
+        padding-right: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .premium-row:hover td {
+        transform: none;
+        border-left: none;
+    }
+    
+    .premium-no-requirements {
+        margin: 20px 10px;
+        padding: 30px 20px;
+    }
+}
